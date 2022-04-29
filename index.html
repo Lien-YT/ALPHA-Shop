@@ -13,7 +13,7 @@
   <!-- HEADER -->
   <header class="nav d-flex align-items-center">
     <!-- Menu Toggle -->
-    <div class="nav-menu m-5">  
+    <div class="nav-menu m-5">
       <label for="navbar-toggle" class="navbar-toggle_label w-100 cursor-pointer">
         <img src="/src/img/Icon-hammenu@2x.png" ); alt="">
       </label>
@@ -50,7 +50,8 @@
             <a class="cart-toggle" href="#"><img src="/src/img/Icon-cart@2x.png" alt=""></a>
           </li>
           <li class="tool_darkmode justify-content-center">
-            <label for="darkmode-toggle" class="darkmode-label "><img src="/src/img/Icon-darkmode@2x.png" alt=""></label>
+            <label for="darkmode-toggle" class="darkmode-label "><img src="/src/img/Icon-darkmode@2x.png"
+                alt=""></label>
             <input type="checkbox" class="darkmode-input d-none" id="darkmode-toggle">
           </li>
         </ul>
@@ -66,23 +67,24 @@
   </header>
 
   <!-- MAIN -->
-  <main class="main-area">
-    <h3>結帳</h3>
+  <main class="main-area m-4">
+    <h2>結帳</h2>
     <!-- Stepper -->
-    <section id="step-control">
-      <div class="container stepper-container">
-        <div class="step active">
-          <div class="circle-container"></div>
+    <section id="step-control" class="w-100">
+      <div class="container stepper-container w-100 d-flex justify-content-between align-items-center">
+        <div class="step checked">
+          <div class="circle-container">
+          </div>
           <div class="label-container">寄送地址</div>
         </div>
-        <div class="step">
-          <div class="circle-container"></div>
-          <span class="connect-line"></span>
+        <div class="step active">
+          <span class="connect-line d-block span1"></span>
+          <div class="circle-container "></div>
           <div class="label-container">運送方式</div>
         </div>
         <div class="step">
+          <span class="connect-line d-block"></span>
           <div class="circle-container"></div>
-          <span class="connect-line"></span>
           <div class="label-container">付款資訊</div>
         </div>
       </div>
@@ -93,7 +95,7 @@
         <div class="form-content">
           <!-- Part 1: 寄送地址 -->
           <div class="part" id="shipping-info">
-            <h4 class="part-title">寄送地址</h4>
+            <h2 class="part-title">寄送地址</h2>
             <div class="form-row">
               <label>稱謂</label>
               <div class="select-wrapper">
@@ -156,7 +158,7 @@
           </div>
           <!-- Part 2: 運送方式 -->
           <div class="part d-none" id="shipping-way">
-            <h4 class="part-title">運送方式</h4>
+            <h2 class="part-title">運送方式</h2>
             <div class="form-wrap">
               <input name="shipping-type" type="radio" value="standard">
               <div class="shipping-type-desc">
@@ -176,7 +178,7 @@
           </div>
           <!-- Part 3: 付款資訊 -->
           <div class="part d-none" id="payment-info">
-            <h4 class="part-title">付款資訊</h4>
+            <h2 class="part-title">付款資訊</h2>
             <div class="form-row">
               <label>持卡人姓名</label>
               <input id="cardholder-name" type="text" placeholder="John Doe">

@@ -783,7 +783,6 @@ body,
 /** HEADER **/
 header {
   height: 56px;
-  outline: 1px solid red;
   /* Brand */
 }
 
@@ -865,5 +864,78 @@ header .nav-logo-container {
 
 header .nav-logo-container img {
   height: 24px;
+}
+
+main #step-control {
+  outline: 1px solid red;
+  height: 32px;
+}
+
+main #step-control .stepper-container {
+  margin: 1.5rem 0;
+}
+
+main #step-control .step {
+  position: relative;
+  text-align: center;
+}
+
+main #step-control .step:nth-child(1) .circle-container::after {
+  content: "1";
+}
+
+main #step-control .step:nth-child(2) .circle-container::after {
+  content: "2";
+}
+
+main #step-control .step:nth-child(3) .circle-container::after {
+  content: "3";
+}
+
+main #step-control .step .circle-container {
+  height: 32px;
+  width: 32px;
+  border: 1px solid #AFB1BD;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #AFB1BD;
+  padding: 4px;
+}
+
+main #step-control .step .label-container {
+  display: none;
+  color: #AFB1BD;
+}
+
+main #step-control .step .connect-line {
+  height: 1px;
+  width: calc((100vw - 3rem)/2 - 6rem);
+  background-color: #AFB1BD;
+  position: absolute;
+  top: 16px;
+  right: calc(100% + 2rem);
+}
+
+main #step-control .step.active .circle-container {
+  border-color: #333333;
+  color: #333333;
+}
+
+main #step-control .step.active .label-container {
+  color: #333333;
+}
+
+main #step-control .step.checked .circle-container {
+  border-color: #333333;
+  background-color: #333333;
+  color: #FFFFFF;
+}
+
+main #step-control .step.checked .circle-container::after {
+  content: "\2714";
+}
+
+main #step-control .step.checked .label-container {
+  color: #333333;
 }
 /*# sourceMappingURL=main.css.map */

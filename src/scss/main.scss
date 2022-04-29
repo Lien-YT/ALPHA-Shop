@@ -262,6 +262,14 @@ body,
   font-family: "Noto Sans TC";
 }
 
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .circle-container::after {
+      content: "#{$i}";
+    }
+  }
+}
+
 %form-input-style {
   border: 1px solid $row-border-gray;
   border-radius: 5px;
@@ -277,7 +285,6 @@ body,
 /** HEADER **/
 header {
   height: 56px;
-  outline: 1px solid red;
 
   .nav-menu {
     .navbar-toggle_label>img {
@@ -291,6 +298,7 @@ header {
         transition: transform 0.3s ease-in-out;
       }
     }
+
     /* Nav Links */
     .nav-links {
       position: absolute;
@@ -348,3 +356,70 @@ header {
   }
 }
 
+main {
+  #step-control {
+    outline: 1px solid red;
+    height: 32px;
+
+    .stepper-container {
+      margin: 1.5rem 0;
+    }
+
+    .step {
+      position: relative;
+      @include getStepNums(3);
+      text-align: center;
+
+      .circle-container {
+        height: 32px;
+        width: 32px;
+        border: 1px solid $inactive-gray;
+        border-radius: 50%;
+        background-color: transparent;
+        color: $inactive-gray;
+        padding: 4px;
+      }
+
+      .label-container {
+        display: none;
+        color: $inactive-gray;
+      }
+
+      .connect-line {
+        height: 1px;
+        width: calc((100vw - 3rem)/2 - 6rem);
+        background-color: $inactive-gray;
+        position: absolute;
+        top: 16px;
+        right: calc(100% + 2rem);
+      }
+
+      &.active {
+        .circle-container {
+          border-color: $checked-gray;
+          color: $checked-gray;
+        }
+
+        .label-container {
+          color: $checked-gray;
+        }
+      }
+
+      &.checked {
+        .circle-container {
+          border-color: $checked-gray;
+          background-color: $checked-gray;
+          color: $white;
+
+          &::after {
+            content: "\2714";
+          }
+        }
+
+        .label-container {
+          color: $checked-gray;
+        }
+      }
+    }
+  }
+}
