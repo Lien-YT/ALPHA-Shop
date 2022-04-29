@@ -83,7 +83,7 @@ input:invalid {
 /* background colors */
 $footer-bg: #E5E5E5;
 $btn-primary-bg: #f67599;
-$btn-circle-bg:#F0F0F5; // btn-circle, border
+$btn-circle-bg:#F0F0F5; // btn-circle, wrap-border
 /* text colors */
 $white: #FFFFFF;
 $main-black: #2A2A2A;
@@ -91,21 +91,22 @@ $secondary-black: #000000; // form row, button, number, cost
 $secondary-gray: #808080; // form row label, footer list
 /* stepper's colors */
 $checked-gray: #333333;
-$inactive-gray: #AFB1BD; 
+$inactive-gray: #AFB1BD;
 /* form's colors */
 $row-border-gray: #4A4A4A;
 $wrap-border-gray:#F0F0F5;
 $unselected-black: #222222;
 
-$sizes: (
-  25: 25%,
+$sizes: (25: 25%,
   50: 50%,
   75: 75%,
-  100: 100%
-);
+  100: 100%);
 
-@each $prop, $abbrev in (width: w, height: h) {
-  @each $num, $val in $sizes {
+@each $prop,
+$abbrev in (width: w, height: h) {
+
+  @each $num,
+  $val in $sizes {
     .#{$abbrev}-#{$num} {
       #{$prop}: $val;
     }
@@ -113,8 +114,7 @@ $sizes: (
 }
 
 $spacer: 1rem;
-$spacers: (
-  0: 0,
+$spacers: (0: 0,
   1: ($spacer * 0.25),
   2: ($spacer * 0.5),
   3: ($spacer * 0.75),
@@ -122,30 +122,38 @@ $spacers: (
   5: ($spacer * 1.25),
   6: ($spacer * 1.5),
   7: ($spacer * 1.75),
-  8: ($spacer * 2)
-);
+  8: ($spacer * 2));
 
-@each $prop, $abbrev in (margin: m, padding: p) {
-  @each $num, $val in $spacers {
+@each $prop,
+$abbrev in (margin: m, padding: p) {
+
+  @each $num,
+  $val in $spacers {
     .#{$abbrev}-#{$num} {
       #{$prop}: $val;
     }
+
     .#{$abbrev}t-#{$num} {
       #{$prop}-top: $val;
     }
+
     .#{$abbrev}r-#{$num} {
       #{$prop}-right: $val;
     }
+
     .#{$abbrev}b-#{$num} {
       #{$prop}-bottom: $val;
     }
+
     .#{$abbrev}l-#{$num} {
       #{$prop}-left: $val;
     }
+
     .#{$abbrev}x-#{$num} {
       #{$prop}-left: $val;
       #{$prop}-right: $val;
     }
+
     .#{$abbrev}y-#{$num} {
       #{$prop}-top: $val;
       #{$prop}-bottom: $val;
@@ -246,10 +254,12 @@ html {
   height: 100%;
 }
 
-body {
+body,
+.nav-links {
   height: 100%;
   background: $white;
-  color: $main-black font-family: "Noto Sans TC";
+  color: $main-black;
+  font-family: "Noto Sans TC";
 }
 
 %form-input-style {
@@ -258,3 +268,83 @@ body {
   font-size: 12px;
   padding: 12px 16px;
 }
+
+%align-center {
+  margin: 0 auto;
+}
+
+// ===== style start ===== //
+/** HEADER **/
+header {
+  height: 56px;
+  outline: 1px solid red;
+
+  .nav-menu {
+    .navbar-toggle_label>img {
+      width: 20px;
+    }
+
+    /* Menu Toggle */
+    #navbar-toggle:checked {
+      &~.nav-links {
+        transform: scale(1, 1);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+    /* Nav Links */
+    .nav-links {
+      position: absolute;
+      top: 56px;
+      left: 0px;
+      z-index: 99;
+      transform: scale(1, 0);
+      transform-origin: top;
+      transition: transform 0.2s ease-in-out;
+
+      .nav-category-content,
+      .nav-tools-content {
+        li {
+          width: 90%;
+          height: 4.5rem;
+          display: flex;
+          align-items: center;
+
+          a {
+            margin: 0 auto;
+            font-weight: 600;
+
+            &:visited {
+              color: $main-black;
+            }
+          }
+        }
+      }
+
+      .nav-category-content>li {
+        border-bottom: 1px solid rgba($main-black, 0.1);
+      }
+
+      .nav-tools-content {
+        width: 192px;
+
+        li>a>img,
+        li>label>img {
+
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  /* Brand */
+  .nav-logo-container {
+    margin: 0 auto;
+    transform: translate(-25%, 0%);
+
+    img {
+      height: 24px;
+    }
+  }
+}
+

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,56 +8,60 @@
   <title>ALPHA Shop</title>
   <link rel="stylesheet" href="dist/main.css">
 </head>
+
 <body>
   <!-- HEADER -->
-  <header class="nav">
-    <!-- Nav -->
-    <div class="nav-menu">
-      <label for="navbar-toggle" class="ham-toggle"></label>
-      <input type="checkbox" id="navbar-toggle">
-      <ul class="nav-content">
-        <li>
-          <a href="#">男裝</a>
-        </li>
-        <li>
-          <a href="#">女裝</a>
-        </li>
-        <li>
-          <a href="#">最新消息</a>
-        </li>
-        <li>
-          <a href="#">客製商品</a>
-        </li>
-        <li>
-          <a href="#">聯絡我們</a>
-        </li>
-      </ul>
+  <header class="nav d-flex align-items-center">
+    <!-- Menu Toggle -->
+    <div class="nav-menu m-5">  
+      <label for="navbar-toggle" class="navbar-toggle_label w-100 cursor-pointer">
+        <img src="/src/img/Icon-hammenu@2x.png" ); alt="">
+      </label>
+      <input type="checkbox" id="navbar-toggle" class="d-none">
+      <!-- Nav Links -->
+      <div class="nav-links w-100 d-flex flex-column justify-content-start align-items-center">
+        <!-- Categories -->
+        <ul class="nav-category-content w-100 d-flex flex-column justify-content-start align-items-center ">
+          <li class="nav-category_li">
+            <a href="#">男款</a>
+          </li>
+          <li class="nav-category_li">
+            <a href="#">女款</a>
+          </li>
+          <li class="nav-category_li">
+            <a href="#">最新消息</a>
+          </li>
+          <li class="nav-category_li">
+            <a href="#">客製商品</a>
+          </li>
+          <li class="nav-category_li">
+            <a href="#">聯絡我們</a>
+          </li>
+        </ul>
+        <!-- Tools -->
+        <ul class="nav-tools-content d-flex justify-content-between">
+          <li class="tool_search">
+            <a href="#"><img src="/src/img/Icon-search@2x.png" alt=""></a>
+            <form class="search-toggle d-none">
+              <input type="text" id="search-input">
+            </form>
+          </li>
+          <li class="tool_cart">
+            <a class="cart-toggle" href="#"><img src="/src/img/Icon-cart@2x.png" alt=""></a>
+          </li>
+          <li class="tool_darkmode justify-content-center">
+            <label for="darkmode-toggle" class="darkmode-label "><img src="/src/img/Icon-darkmode@2x.png" alt=""></label>
+            <input type="checkbox" class="darkmode-input d-none" id="darkmode-toggle">
+          </li>
+        </ul>
+      </div>
     </div>
+
     <!-- Brand -->
     <div class="nav-logo-container">
       <a href="#">
-        <img src="" alt="">
+        <img src="/src/img/Logo@2x.png" alt="ALPHA Shop logo">
       </a>
-    </div>
-    <!-- Tools -->
-    <div class="nav-tools">
-      <ul class="tools-content">
-        <li class="tool_search">
-          <form class="search-toggle">
-            <input type="text" id="search-input">
-            <label for="search-input" class="search-label">
-              <i></i>
-            </label>
-          </form>
-        </li>
-        <li class="tool_cart">
-          <a class="cart-toggle" href="#"></a>
-        </li>
-        <li class="tool_darkmode">
-          <label for="darkmode-toggle" class="darkmode-label"><i class="tool_icon far fa-moon"></i></label>
-          <input type="checkbox" class="darkmode-input" id="darkmode-toggle">
-        </li>
-      </ul>
     </div>
   </header>
 
@@ -116,7 +121,7 @@
               <div class="select-wrapper">
                 <select name="a-type" id="a-city" required>
                   <option value="" disabled selected>請選擇縣市</option>
-                  <option value="" disabled >====北部====</option>
+                  <option value="" disabled>====北部====</option>
                   <option value="">基隆市</option>
                   <option value="">台北市</option>
                   <option value="">新北市</option>
@@ -136,7 +141,7 @@
                   <option value="">台南市</option>
                   <option value="">高雄市</option>
                   <option value="">屏東縣</option>
-                  <option value="" disabled>====東部====</option>              
+                  <option value="" disabled>====東部====</option>
                   <option value="">花蓮縣</option>
                   <option value="">台東縣</option>
                   <option value="" disabled>====外島====</option>
@@ -304,4 +309,5 @@
   <!-- SCRIPTS -->
   <script src="dist/bundle.js"></script>
 </body>
+
 </html>
