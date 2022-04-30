@@ -570,8 +570,6 @@ main {
     }
 
     .c-product-card {
-      outline: 1px solid blue;
-
       .c-product-img {
         width: 100px;
         height: 100px;
@@ -579,7 +577,6 @@ main {
       }
 
       .c-product-info {
-        outline: 1px solid red;
         text-align: end;
         flex: 1;
         grid-template-areas:
@@ -595,7 +592,6 @@ main {
         }
 
         .c-product-qty {
-          outline: 1px solid red;
           height: 26px;
           width: 116px;
           margin: 0 0 0 auto;
@@ -624,6 +620,29 @@ main {
     .total-cost {
       border-top: 1px solid $wrap-border-gray;
       font-size: 14px;
+    }
+  }
+
+  /* Buttons */
+  #buttons-control {
+    border-top: 1px solid #E6E6EB;
+
+    .btn {
+      height: 46px;
+      min-width: 156px;
+      width: 100%;
+      img {
+        height: 9px;
+        width: 21px;
+      }
+    }
+    .btn-outline {
+      // display: none;
+    }
+    .btn-primary {
+      border-radius: 8px;
+      background-color: $btn-primary-bg;
+      color: $white;
     }
   }
 }

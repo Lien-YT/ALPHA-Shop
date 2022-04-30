@@ -908,6 +908,7 @@ main {
   /* Stepper */
   /* Form */
   /* Cart */
+  /* Buttons */
 }
 
 main #step-control {
@@ -1096,10 +1097,6 @@ main #cart-panel p {
   color: #2A2A2A;
 }
 
-main #cart-panel .c-product-card {
-  outline: 1px solid blue;
-}
-
 main #cart-panel .c-product-card .c-product-img {
   width: 100px;
   height: 100px;
@@ -1107,7 +1104,6 @@ main #cart-panel .c-product-card .c-product-img {
 }
 
 main #cart-panel .c-product-card .c-product-info {
-  outline: 1px solid red;
   text-align: end;
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -1135,7 +1131,6 @@ main #cart-panel .c-product-card .c-product-info .c-product-price {
 }
 
 main #cart-panel .c-product-card .c-product-info .c-product-qty {
-  outline: 1px solid red;
   height: 26px;
   width: 116px;
   margin: 0 0 0 auto;
@@ -1164,5 +1159,26 @@ main #cart-panel .freight-cost,
 main #cart-panel .total-cost {
   border-top: 1px solid #F0F0F5;
   font-size: 14px;
+}
+
+main #buttons-control {
+  border-top: 1px solid #E6E6EB;
+}
+
+main #buttons-control .btn {
+  height: 46px;
+  min-width: 156px;
+  width: 100%;
+}
+
+main #buttons-control .btn img {
+  height: 9px;
+  width: 21px;
+}
+
+main #buttons-control .btn-primary {
+  border-radius: 8px;
+  background-color: #f67599;
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=main.css.map */
