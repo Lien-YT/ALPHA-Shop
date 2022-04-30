@@ -298,7 +298,7 @@ body,
 }
 
 %form-mobile-grid {
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   column-gap: 1.875rem;
 
   h2 {
@@ -381,6 +381,8 @@ header {
 }
 
 main {
+
+  /* Stepper */
   #step-control {
     height: 32px;
 
@@ -442,10 +444,11 @@ main {
     }
   }
 
+  /* Form */
   #form-panel {
     form {
       h2 {
-        margin-bottom: 1.5rem;
+        @extend %form-spacing;
       }
 
       .form-row {
@@ -553,6 +556,74 @@ main {
         }
       }
 
+    }
+  }
+
+  /* Cart */
+  #cart-panel {
+    border: 1px solid $wrap-border-gray;
+    border-radius: 8px;
+    color: $secondary-black;
+
+    p {
+      color: $main-black;
+    }
+
+    .c-product-card {
+      outline: 1px solid blue;
+
+      .c-product-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+      }
+
+      .c-product-info {
+        outline: 1px solid red;
+        text-align: end;
+        flex: 1;
+        grid-template-areas:
+          "name "
+          "qty"
+          "price";
+        grid-gap: 1rem;
+
+        @each $area in (name, qty, price) {
+          .c-product-#{$area} {
+            grid-area: $area;
+          }
+        }
+
+        .c-product-qty {
+          outline: 1px solid red;
+          height: 26px;
+          width: 116px;
+          margin: 0 0 0 auto;
+
+          span {
+            text-align: center;
+            flex: 1;
+            font-size: 14px;
+          }
+
+          button {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: $btn-circle-bg;
+          }
+        }
+
+        .c-product-price {
+          height: 22px;
+        }
+      }
+    }
+
+    .freight-cost,
+    .total-cost {
+      border-top: 1px solid $wrap-border-gray;
+      font-size: 14px;
     }
   }
 }

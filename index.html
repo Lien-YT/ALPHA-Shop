@@ -198,42 +198,43 @@
       </form>
     </section>
     <!-- Cart -->
-    <section id="cart-panel">
-      <div class="cart-products">
-        <div class="c-product-card">
+    <section id="cart-panel" class="mt-2 mb-8 p-4">
+      <h3 class="cart-title d-none">購物籃</h3>
+      <div class="cart-products d-flex flex-column">
+        <div class="c-product-card w-100 mb-4 d-flex">
           <div class="c-product-img">
             <img src="" alt="">
           </div>
-          <div class="c-product-info">
+          <div class="c-product-info d-grid justify-content-end align-items-center">
             <p class="c-product-name">破壞補丁修身牛仔褲</p>
-            <div class="c-product-qty">
-              <button class="btn-minus"></button>
-              <input type="text" class="c-product-qty_input" value="1">
-              <button class="btn-plus"></button>
+            <div class="c-product-qty d-flex align-items-center">
+              <button class="btn-minus"><i class="fas fa-minus"></i></button>
+              <span class="c-product-qty_amount">1</span>
+              <button class="btn-plus"><i class="fas fa-plus"></i></button>
             </div>
             <b class="c-product-price price">$3,999</b>
           </div>
         </div>
-        <div class="c-product-card">
+        <div class="c-product-card w-100 mb-4 d-flex">
           <div class="c-product-img">
             <img src="" alt="">
           </div>
-          <div class="c-product-info">
+          <div class="c-product-info d-grid justify-content-end align-items-center">
             <p class="c-product-name">刷色直筒牛仔褲</p>
-            <div class="c-product-qty">
-              <button class="btn-minus"></button>
-              <input type="text" class="c-product-qty_input" value="1">
-              <button class="btn-plus"></button>
+            <div class="c-product-qty d-flex align-items-center">
+              <button class="btn-minus"><i class="fas fa-minus"></i></button>
+              <span class="c-product-qty_amount">1</span>
+              <button class="btn-plus"><i class="fas fa-plus"></i></button>
             </div>
             <b class="c-product-price price">$1,299</b>
           </div>
         </div>
       </div>
-      <div class="freight-cost">
+      <div class="freight-cost py-4 d-flex justify-content-between">
         <p class="freight-cost_p">運費</p>
         <b class="freight-cost_b price">免費</b>
       </div>
-      <div class="total-cost">
+      <div class="total-cost pt-4 d-flex justify-content-between">
         <p class="total-cost_p">小計</p>
         <b class="total-cost_b price">$5,298</b>
       </div>
@@ -308,6 +309,7 @@
 
   <!-- SCRIPTS -->
   <script src="dist/bundle.js"></script>
+  <script src="https://kit.fontawesome.com/0d8602a34b.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
