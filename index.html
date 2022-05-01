@@ -68,188 +68,190 @@
 
   <!-- MAIN -->
   <main class="main-area m-4">
-    <h2>結帳</h2>
-    <!-- Stepper -->
-    <section id="step-control" class="w-100">
-      <div class="container stepper-container w-100 my-6 d-flex justify-content-between align-items-center">
-        <div class="step checked">
-          <div class="circle-container">
+    <div class="main-content">
+      <h2>結帳</h2>
+      <!-- Stepper -->
+      <section id="step-control" class="w-100">
+        <div class="container stepper-container w-100 my-6 d-flex justify-content-between align-items-center">
+          <div class="step checked">
+            <div class="circle-container">
+            </div>
+            <div class="label-container">寄送地址</div>
           </div>
-          <div class="label-container">寄送地址</div>
+          <div class="step active">
+            <span class="connect-line d-block span1"></span>
+            <div class="circle-container "></div>
+            <div class="label-container">運送方式</div>
+          </div>
+          <div class="step">
+            <span class="connect-line d-block"></span>
+            <div class="circle-container"></div>
+            <div class="label-container">付款資訊</div>
+          </div>
         </div>
-        <div class="step active">
-          <span class="connect-line d-block span1"></span>
-          <div class="circle-container "></div>
-          <div class="label-container">運送方式</div>
-        </div>
-        <div class="step">
-          <span class="connect-line d-block"></span>
-          <div class="circle-container"></div>
-          <div class="label-container">付款資訊</div>
-        </div>
-      </div>
-    </section>
-    <!-- Form -->
-    <section id="form-panel" class="py-6">
-      <form id="a-form h-100">
-        <!-- Part 1: 寄送地址 -->
-        <div class="part d-grid" id="shipping-info">
-          <h2 class="part-title">寄送地址</h2>
-          <div class="form-row">
-            <label>稱謂</label>
-            <div class="select-wrapper">
-              <select name="a-type" id="a-title" required>
-                <option value="" disabled selected>請選擇稱謂</option>
-                <option value="mr">先生</option>
-                <option value="ms">女士</option>
-              </select>
+      </section>
+      <!-- Form -->
+      <section id="form-panel" class="py-6">
+        <form id="a-form h-100">
+          <!-- Part 1: 寄送地址 -->
+          <div class="part d-grid" id="shipping-info">
+            <h2 class="part-title">寄送地址</h2>
+            <div class="form-row">
+              <label>稱謂</label>
+              <div class="select-wrapper">
+                <select name="a-type" id="a-title" required>
+                  <option value="" disabled selected>請選擇稱謂</option>
+                  <option value="mr">先生</option>
+                  <option value="ms">女士</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <label>姓名</label>
+              <input id="receiver-name" type="text" placeholder="請輸入姓名" required>
+            </div>
+            <div class="form-row">
+              <label>電話</label>
+              <input id="receiver-tel" type="text" placeholder="請輸入行動電話" required>
+            </div>
+            <div class="form-row">
+              <label>E-mail</label>
+              <input id="receiver-mail" type="text" placeholder="請輸入電子郵件" required>
+            </div>
+            <div class="form-row">
+              <label>縣市</label>
+              <div class="select-wrapper">
+                <select name="a-type" id="a-city" required>
+                  <option value="" disabled selected>請選擇縣市</option>
+                  <option value="" disabled>====北部====</option>
+                  <option value="">基隆市</option>
+                  <option value="">台北市</option>
+                  <option value="">新北市</option>
+                  <option value="">桃園市</option>
+                  <option value="">新竹市</option>
+                  <option value="">新竹縣</option>
+                  <option value="">宜蘭縣</option>
+                  <option value="" disabled>====中部====</option>
+                  <option value="">苗栗縣</option>
+                  <option value="">台中市</option>
+                  <option value="">彰化縣</option>
+                  <option value="">雲林縣</option>
+                  <option value="">南投縣</option>
+                  <option value="" disabled>====南部====</option>
+                  <option value="">嘉義市</option>
+                  <option value="">嘉義縣</option>
+                  <option value="">台南市</option>
+                  <option value="">高雄市</option>
+                  <option value="">屏東縣</option>
+                  <option value="" disabled>====東部====</option>
+                  <option value="">花蓮縣</option>
+                  <option value="">台東縣</option>
+                  <option value="" disabled>====外島====</option>
+                  <option value="">外島地區</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <label>地址</label>
+              <input id="receiver-address" type="text" placeholder="請輸入地址" required>
             </div>
           </div>
-          <div class="form-row">
-            <label>姓名</label>
-            <input id="receiver-name" type="text" placeholder="請輸入姓名" required>
-          </div>
-          <div class="form-row">
-            <label>電話</label>
-            <input id="receiver-tel" type="text" placeholder="請輸入行動電話" required>
-          </div>
-          <div class="form-row">
-            <label>E-mail</label>
-            <input id="receiver-mail" type="text" placeholder="請輸入電子郵件" required>
-          </div>
-          <div class="form-row">
-            <label>縣市</label>
-            <div class="select-wrapper">
-              <select name="a-type" id="a-city" required>
-                <option value="" disabled selected>請選擇縣市</option>
-                <option value="" disabled>====北部====</option>
-                <option value="">基隆市</option>
-                <option value="">台北市</option>
-                <option value="">新北市</option>
-                <option value="">桃園市</option>
-                <option value="">新竹市</option>
-                <option value="">新竹縣</option>
-                <option value="">宜蘭縣</option>
-                <option value="" disabled>====中部====</option>
-                <option value="">苗栗縣</option>
-                <option value="">台中市</option>
-                <option value="">彰化縣</option>
-                <option value="">雲林縣</option>
-                <option value="">南投縣</option>
-                <option value="" disabled>====南部====</option>
-                <option value="">嘉義市</option>
-                <option value="">嘉義縣</option>
-                <option value="">台南市</option>
-                <option value="">高雄市</option>
-                <option value="">屏東縣</option>
-                <option value="" disabled>====東部====</option>
-                <option value="">花蓮縣</option>
-                <option value="">台東縣</option>
-                <option value="" disabled>====外島====</option>
-                <option value="">外島地區</option>
-              </select>
+          <!-- Part 2: 運送方式 -->
+          <div class="part d-none" id="shipping-way">
+            <h2 class="part-title">運送方式</h2>
+            <div class="form-wrap active">
+              <input name="shipping-type" type="radio" value="standard">
+              <div class="shipping-type-desc">
+                <label>標準運送</label>
+                <p>約 3-7 個工作天</p>
+              </div>
+              <div class="shipping-type-cost">免費</div>
+            </div>
+            <div class="form-wrap">
+              <input name="shipping-type" type="radio" value="dhl-container">
+              <div class="shipping-type-desc">
+                <label>DHL 貨櫃</label>
+                <p>48 小時內送達</p>
+              </div>
+              <div class="shipping-type-cost">$500</div>
             </div>
           </div>
-          <div class="form-row">
-            <label>地址</label>
-            <input id="receiver-address" type="text" placeholder="請輸入地址" required>
-          </div>
-        </div>
-        <!-- Part 2: 運送方式 -->
-        <div class="part" id="shipping-way">
-          <h2 class="part-title">運送方式</h2>
-          <div class="form-wrap active">
-            <input name="shipping-type" type="radio" value="standard">
-            <div class="shipping-type-desc">
-              <label>標準運送</label>
-              <p>約 3-7 個工作天</p>
+          <!-- Part 3: 付款資訊 -->
+          <div class="part d-grid" id="payment-info">
+            <h2 class="part-title">付款資訊</h2>
+            <div class="form-row">
+              <label>持卡人姓名</label>
+              <input id="cardholder-name" type="text" placeholder="John Doe">
             </div>
-            <div class="shipping-type-cost">免費</div>
-          </div>
-          <div class="form-wrap">
-            <input name="shipping-type" type="radio" value="dhl-container">
-            <div class="shipping-type-desc">
-              <label>DHL 貨櫃</label>
-              <p>48 小時內送達</p>
+            <div class="form-row">
+              <label>卡號</label>
+              <input id="card-number" type="text" placeholder="1111 2222 3333 4444">
             </div>
-            <div class="shipping-type-cost">$500</div>
-          </div>
-        </div>
-        <!-- Part 3: 付款資訊 -->
-        <div class="part d-grid" id="payment-info">
-          <h2 class="part-title">付款資訊</h2>
-          <div class="form-row">
-            <label>持卡人姓名</label>
-            <input id="cardholder-name" type="text" placeholder="John Doe">
-          </div>
-          <div class="form-row">
-            <label>卡號</label>
-            <input id="card-number" type="text" placeholder="1111 2222 3333 4444">
-          </div>
-          <div class="form-row">
-            <label>有效期限</label>
-            <input id="expiration-date" type="text" placeholder="MM/YY">
-          </div>
-          <div class="form-row">
-            <label>CVC / CCV</label>
-            <input id="CVV" type="text" placeholder="123">
-          </div>
-        </div>
-      </form>
-    </section>
-    <!-- Cart -->
-    <section id="cart-panel" class="mt-2 mb-8 p-4">
-      <h3 class="cart-title d-none">購物籃</h3>
-      <div class="cart-products d-flex flex-column">
-        <div class="c-product-card w-100 mb-4 d-flex">
-          <div class="c-product-img">
-            <img src="" alt="">
-          </div>
-          <div class="c-product-info d-grid justify-content-end align-items-center">
-            <p class="c-product-name">破壞補丁修身牛仔褲</p>
-            <div class="c-product-qty d-flex align-items-center">
-              <button class="btn-minus"><i class="fas fa-minus"></i></button>
-              <span class="c-product-qty_amount">1</span>
-              <button class="btn-plus"><i class="fas fa-plus"></i></button>
+            <div class="form-row">
+              <label>有效期限</label>
+              <input id="expiration-date" type="text" placeholder="MM/YY">
             </div>
-            <b class="c-product-price price">$3,999</b>
-          </div>
-        </div>
-        <div class="c-product-card w-100 mb-4 d-flex">
-          <div class="c-product-img">
-            <img src="" alt="">
-          </div>
-          <div class="c-product-info d-grid justify-content-end align-items-center">
-            <p class="c-product-name">刷色直筒牛仔褲</p>
-            <div class="c-product-qty d-flex align-items-center">
-              <button class="btn-minus"><i class="fas fa-minus"></i></button>
-              <span class="c-product-qty_amount">1</span>
-              <button class="btn-plus"><i class="fas fa-plus"></i></button>
+            <div class="form-row">
+              <label>CVC / CCV</label>
+              <input id="CVV" type="text" placeholder="123">
             </div>
-            <b class="c-product-price price">$1,299</b>
+          </div>
+        </form>
+      </section>
+      <!-- Cart -->
+      <section id="cart-panel" class="mt-2 mb-8 p-4">
+        <h3 class="cart-title d-none mb-8">購物籃</h3>
+        <div class="cart-products d-flex flex-column">
+          <div class="c-product-card w-100 mb-4 d-flex">
+            <div class="c-product-img">
+              <img src="" alt="">
+            </div>
+            <div class="c-product-info d-grid justify-content-end align-items-center">
+              <p class="c-product-name">破壞補丁修身牛仔褲</p>
+              <div class="c-product-qty d-flex align-items-center">
+                <button class="btn-minus"><i class="fas fa-minus"></i></button>
+                <span class="c-product-qty_amount">1</span>
+                <button class="btn-plus"><i class="fas fa-plus"></i></button>
+              </div>
+              <b class="c-product-price price">$3,999</b>
+            </div>
+          </div>
+          <div class="c-product-card w-100 mb-4 d-flex">
+            <div class="c-product-img">
+              <img src="" alt="">
+            </div>
+            <div class="c-product-info d-grid justify-content-end align-items-center">
+              <p class="c-product-name">刷色直筒牛仔褲</p>
+              <div class="c-product-qty d-flex align-items-center">
+                <button class="btn-minus"><i class="fas fa-minus"></i></button>
+                <span class="c-product-qty_amount">1</span>
+                <button class="btn-plus"><i class="fas fa-plus"></i></button>
+              </div>
+              <b class="c-product-price price">$1,299</b>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="freight-cost py-4 d-flex justify-content-between">
-        <p class="freight-cost_p">運費</p>
-        <b class="freight-cost_b price">免費</b>
-      </div>
-      <div class="total-cost pt-4 d-flex justify-content-between">
-        <p class="total-cost_p">小計</p>
-        <b class="total-cost_b price">$5,298</b>
-      </div>
-    </section>
-    <!-- Buttons -->
-    <section id="buttons-control" class=" py-6 d-flex justify-content-between">
-      <button class="btn btn-outline d-flex justify-content-start align-items-center">
-        <img src="./src/img/arrow-left-black.png" class="mr-3">上一步
-      </button>
-      <button class="btn btn-primary ml-4 d-flex  justify-content-center align-items-center">下一步<img src="./src/img/arrow-right.png" class="ml-3"></button>
-    </section>
+        <div class="freight-cost py-4 d-flex justify-content-between">
+          <p class="freight-cost_p">運費</p>
+          <b class="freight-cost_b price">免費</b>
+        </div>
+        <div class="total-cost pt-4 d-flex justify-content-between">
+          <p class="total-cost_p">小計</p>
+          <b class="total-cost_b price">$5,298</b>
+        </div>
+      </section>
+      <!-- Buttons -->
+      <section id="buttons-control" class=" py-6 d-flex justify-content-between">
+        <button class="btn btn-outline d-flex justify-content-start align-items-center">
+          <img src="./src/img/arrow-left-black.png" class="mr-3">上一步
+        </button>
+        <button class="btn btn-primary ml-4 d-flex  justify-content-center align-items-center">下一步<img src="./src/img/arrow-right.png" class="ml-3"></button>
+      </section>
+    </div>
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer-area">
+  <footer class="footer-area d-none">
     <!-- Brand -->
     <div class="footer-logo-container">
       <img src="" alt="">

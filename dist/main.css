@@ -904,6 +904,7 @@ header .nav-logo-container img {
   height: 24px;
 }
 
+/** MAIN **/
 main {
   /* Stepper */
   /* Form */
@@ -949,11 +950,11 @@ main #step-control .step .label-container {
 
 main #step-control .step .connect-line {
   height: 1px;
-  width: calc((100vw - 3rem)/2 - 6rem);
+  width: calc((100vw - 3em)/2 - 6em);
   background-color: #AFB1BD;
   position: absolute;
   top: 16px;
-  right: calc(100% + 2rem);
+  right: calc(100% + 2em);
 }
 
 main #step-control .step.active .circle-container {
@@ -1080,6 +1081,10 @@ main #form-panel form #shipping-info div:nth-child(7) {
   grid-column: 1/3;
 }
 
+main #form-panel form #payment-info {
+  display: none;
+}
+
 main #form-panel form #payment-info div:nth-child(2),
 main #form-panel form #payment-info div:nth-child(3) {
   -ms-grid-column: 1;
@@ -1176,9 +1181,205 @@ main #buttons-control .btn img {
   width: 21px;
 }
 
+main #buttons-control .btn-outline {
+  display: none;
+}
+
 main #buttons-control .btn-primary {
   border-radius: 8px;
   background-color: #f67599;
   color: #FFFFFF;
+}
+
+/** RWD **/
+@media screen and (min-width: 375px) {
+  header {
+    height: 60px;
+    position: relative;
+  }
+  header .nav-menu {
+    all: unset;
+    outline: 1px solid red;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1110px;
+  }
+  header .nav-menu .navbar-toggle_label {
+    display: none;
+  }
+  header .nav-menu .nav-links {
+    all: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header .nav-menu .nav-links ul {
+    all: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 2em;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .nav-menu .nav-links ul.nav-category-content {
+    width: 35%;
+  }
+  header .nav-menu .nav-links ul.nav-category-content li {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 1.5rem;
+    border: none;
+    white-space: nowrap;
+  }
+  header .nav-menu .nav-links ul.nav-tools-content {
+    width: 15%;
+  }
+  header .nav-logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  main .main-content {
+    outline: 1px solid red;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1110px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+    -ms-grid-rows: 1fr 1fr auto 2fr;
+        grid-template-rows: 1fr 1fr auto 2fr;
+  }
+  main .main-content h2 {
+    margin: auto 0;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  main .main-content #step-control {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+  main .main-content #step-control .step {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .main-content #step-control .step .label-container {
+    display: block;
+    margin-left: 0.5rem;
+  }
+  main .main-content #step-control .step .connect-line {
+    width: calc((45vw  - 4.5rem - 1.5rem - 12rem - 8rem) / 2);
+    right: calc(100% + 1.5rem);
+  }
+  main .main-content #form-panel {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
+  main .main-content #form-panel #shipping-info {
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -webkit-column-gap: 1.875rem;
+            column-gap: 1.875rem;
+  }
+  main .main-content #form-panel #shipping-info h2 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+  }
+  main .main-content #form-panel #shipping-info div:nth-child(2),
+  main .main-content #form-panel #shipping-info div:nth-child(6) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+  main .main-content #form-panel #shipping-info div:nth-child(3),
+  main .main-content #form-panel #shipping-info div:nth-child(7) {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 4;
+    grid-column: 3/7;
+  }
+  main .main-content #form-panel #shipping-info div:nth-child(4) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+  }
+  main .main-content #form-panel #shipping-info div:nth-child(5) {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4/7;
+  }
+  main .main-content #form-panel #payment-info .form-row {
+    max-width: 350px;
+  }
+  main .main-content #cart-panel {
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 5;
+    grid-column: 8/13;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    grid-row: 2/5;
+    padding: 2rem 1.5rem;
+  }
+  main .main-content #cart-panel h3 {
+    display: block;
+  }
+  main .main-content #cart-panel .c-product-card {
+    margin-bottom: 2rem;
+  }
+  main .main-content #cart-panel .c-product-info {
+        grid-template-areas: "name price" "qty qty";
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    margin-left: 21px;
+  }
+  main .main-content #cart-panel .c-product-info .c-product-qty {
+    margin: auto 0 0 0;
+  }
+  main .main-content #cart-panel .c-product-info .c-product-price {
+    line-height: 100%;
+  }
+  main .main-content #buttons-control {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+  }
 }
 /*# sourceMappingURL=main.css.map */
