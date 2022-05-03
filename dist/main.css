@@ -805,6 +805,7 @@ main #form-panel form .form-wrap {
   border-radius: 4px;
   font-size: 12px;
   color: #000000;
+  cursor: pointer;
 }
 
 main #form-panel form #shipping-info, main #form-panel form #payment-info {
