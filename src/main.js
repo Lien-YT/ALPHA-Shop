@@ -1,4 +1,4 @@
-// import './scss/main.scss'
+import './scss/main.scss'
 console.log('JS  loaded!')
 
 const cartProducts = document.querySelector('.cart-products')
@@ -94,6 +94,12 @@ const view = {
     });
     cartProducts.innerHTML = rawHTML;
   },
+  renderCartFreightCost(cost) {
+    cartFreightCost.innerText = cost
+  },
+  renderCartTotal() {
+    cartTotal.innerText = `$${model.cartTotal().toLocaleString("en-US")}`
+  },
   renderShippingWays() {
     let rawHTML = ``;
     model.shippingWays.forEach((item) => {
@@ -110,12 +116,6 @@ const view = {
       `
     });
     shippingWay.innerHTML = rawHTML
-  },
-  renderCartFreightCost(item) {
-    cartFreightCost.innerText = item.cost
-  },
-  renderCartTotal() {
-    cartTotal.innerText = `$${model.cartTotal().toLocaleString("en-US")}`
   },
   renderFormPart(stepA, stepB) {
     formParts[stepA].classList.toggle('d-none');
@@ -145,23 +145,36 @@ const view = {
       : nextBtn.innerHTML = `下一步<img src="./src/img/arrow-right.png" class="ml-3"></button>`;
 
   },
-  setWrapActive(targetId) {
-    console.log(targetId)
+  // 用console觀察可以成功替input加上class，但css設置的樣式卻未被觸發
+  // setWrapActive(targetId) {
+  //   console.log(targetId)
+  //   for (let node of shippingWay.children) {
+  //     if (node.dataset.id === targetId ) {
+  //       node.classList.add('active');
+  //       node.firstElementChild.classList.add('checked');
+  //       console.log(node.firstElementChild)
+  //     } else {
+  //       node.classList.remove('active')
+  //       node.firstElementChild.classList.remove('checked')
+  //     }
+  //   }
+  // },
+  setWrapActive() {
     for (let node of shippingWay.children) {
-      if (node.dataset.id === targetId ) {
-        node.classList.add('active')
+      if (node.firstElementChild.checked) {
+        node.classList.add('active');
       } else {
         node.classList.remove('active')
       }
     }
-  }
+  },
 }
 
 const controller = {
   setSite() {
-    view.renderCartList();
     view.renderShippingWays();
-    view.renderCartTotal();
+    view.renderCartList();
+    view.renderCartTotal()
   },
   changeCartAmount(id, changeMode) {
     model.changeAmount(id, changeMode)
@@ -180,8 +193,17 @@ const controller = {
     }
     view.setBtnStatus()
   },
-  selectWrap(targetId) {
-    view.setWrapActive(targetId)
+  selectShippingWay(target) {
+    // 優化方向: 將 cost 金額帶入到 model.cartTotal
+    // model.selectedShippingCost = model.shippingWays.forEach((item) => {
+    //   if (item.id === target.dataset.id) {
+    //     console.log(item.cost)
+    //     return item.cost
+    //   }
+    // })
+    const cost = target.lastElementChild.innerText
+    view.setWrapActive()
+    view.renderCartFreightCost(cost)
   }
 }
 
@@ -200,8 +222,9 @@ btnControl.addEventListener('click', (e) => {
   controller.changeStep(e)
 })
 shippingWay.addEventListener('click', (e) => {
-  const targetId = e.target.closest('.form-wrap').dataset.id
-  controller.selectWrap(targetId)
+  if (e.target.tagName === 'INPUT') {
+    controller.selectShippingWay(e.target.parentElement)
+  }
 })
 
 controller.setSite()
