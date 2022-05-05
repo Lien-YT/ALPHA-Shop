@@ -16,6 +16,7 @@ const nextBtn = btnControl.querySelector('.btn-primary')
 
 const model = {
   step: 0,
+  selectedShippingCost: '',
   shippingWays: [
     {
       id: 1,
@@ -65,7 +66,7 @@ const model = {
   },
   cartTotal() {
     return (
-      this.cartItems.reduce((total, item) => total + item.subtotal, 0)
+      this.cartItems.reduce((total, item) => total + item.subtotal, 0) + this.selectedShippingCost
     );
   }
 }
@@ -194,16 +195,16 @@ const controller = {
     view.setBtnStatus()
   },
   selectShippingWay(target) {
-    // 優化方向: 將 cost 金額帶入到 model.cartTotal
-    // model.selectedShippingCost = model.shippingWays.forEach((item) => {
-    //   if (item.id === target.dataset.id) {
-    //     console.log(item.cost)
-    //     return item.cost
-    //   }
-    // })
+    const id = Number(target.dataset.id)
     const cost = target.lastElementChild.innerText
+
+    id === 1
+      ? model.selectedShippingCost = 0
+      : model.selectedShippingCost = 500;
+    
     view.setWrapActive()
     view.renderCartFreightCost(cost)
+    view.renderCartTotal()
   }
 }
 
