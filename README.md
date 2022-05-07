@@ -4,6 +4,7 @@
 
 > ## 功能  
 </br>
+
 * 使用者可以透過按鈕切換表單分頁，並透過stepper掌控進度
 * 使用者可以透過購物籃的「＋」和「−」按鈕調整購買數量
 * 消費總金額會根據使用者的購買數量以及所選的運送方式改變
@@ -14,6 +15,7 @@
 
 > ## 安裝方式與執行步驟  
 </br>
+
 ```
 git clone https://github.com/Lien-YT/ALPHA-Shop.git
 cd ALPHA-Shop
@@ -26,6 +28,7 @@ npm run build
 
 > ## 開發工具  
 </br>
+
 * css-loader 6.7.1
 * mini-css-extract-plugin 2.6.0
 * node-sass 7.0.1
